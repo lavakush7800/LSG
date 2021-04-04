@@ -23,4 +23,12 @@ class BookController extends Controller
 
         }
     }
+    public function show(){
+        try{
+            $results = Book::show();
+            return view('bookShow', compact('results'));
+        }catch(\Exception $e){
+
+        }
+    }
 }

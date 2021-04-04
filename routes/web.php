@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/book','Crud\BookController@index');
 Route::post('/book_save','Crud\BookController@store');
+Route::get('/bookShow','Crud\BookController@show');
