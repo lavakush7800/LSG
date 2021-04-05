@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('checklogin');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('checklogin');
 
-Route::get('/book','Crud\BookController@index');
-Route::post('/book_save','Crud\BookController@store');
-Route::get('/bookShow','Crud\BookController@show');
+Route::get('/book','Crud\BookController@index')->middleware('checklogin');
+Route::post('/book_save','Crud\BookController@store')->middleware('checklogin');
+Route::get('/bookShow','Crud\BookController@show')->middleware('checklogin');
+
+Route::get('user','Crud\UserController@index')->middleware('checklogin');
