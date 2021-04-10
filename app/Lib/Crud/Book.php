@@ -30,4 +30,16 @@ class Book{
             Log::error($e);
         }
     }
+    public static function delete(int $id):bool{
+        try{
+            $result = Model::find($id)->delete();
+            if($result){
+                return true;
+            }else{
+                return false;
+            };
+        }catch(\Exception $e){
+
+        }
+    }
 }

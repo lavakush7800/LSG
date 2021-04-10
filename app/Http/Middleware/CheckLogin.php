@@ -19,7 +19,7 @@ class CheckLogin
         if(Auth::check()){
             $user = Auth::user();
             if ( $user->role=='user' ) {
-                return $next($request);
+                return redirect('user'); 
            }
            else if ( $user->role=='admin' ) {
                 return $next($request);

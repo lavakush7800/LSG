@@ -18,7 +18,7 @@ class BookController extends Controller
             // dd($fname);
             $data['image'] =$fname;
             $result = Book::get($data);
-            return redirect('book');
+            return redirect('bookShow');
         }catch(\Exception $e){
 
         }
@@ -27,6 +27,15 @@ class BookController extends Controller
         try{
             $results = Book::show();
             return view('bookShow', compact('results'));
+        }catch(\Exception $e){
+
+        }
+    }
+    public function delete($id){
+        try{
+            $data = Book::delete($id);
+            $results = Book::show();
+           return view('bookShow',compact('results'));
         }catch(\Exception $e){
 
         }

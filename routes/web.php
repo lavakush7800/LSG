@@ -24,5 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('checklogi
 Route::get('/book','Crud\BookController@index')->middleware('checklogin');
 Route::post('/book_save','Crud\BookController@store')->middleware('checklogin');
 Route::get('/bookShow','Crud\BookController@show')->middleware('checklogin');
+Route::get('/book/delete/{id}','Crud\BookController@delete')->middleware('checklogin');
 
-Route::get('user','Crud\UserController@index')->middleware('checklogin');
+Route::get('user','UserController@index');
