@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\lib\Crud\Book;
+use App\Http\Requests\StoreBook;
 
 class BookController extends Controller
 {
     public function index(){
         return view('book');
     }
-    public function store(Request $request){
+    public function store(StoreBook $request){
         try{
             $data = $request->all();
             $fname = $request->image->store('/public');

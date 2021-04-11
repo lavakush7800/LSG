@@ -17,14 +17,23 @@
             <div class="form-group">
                 <label for="image"><b>Image:</b></label>
                 <input type="file" class="form-control" id="image" name="image">
+                @error('image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="name"><b>Title:</b></label>
                 <input type="name" class="form-control" id="name" name="name">
+                @error('name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="price"><b>Price:</b></label>
                 <input type="text" class="form-control" id="price" name="price">
+                @error('price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             @csrf
             <button type="submit" class="btn btn-default">Submit</button>
