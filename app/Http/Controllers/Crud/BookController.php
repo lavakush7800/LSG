@@ -49,7 +49,8 @@ class BookController extends Controller
     public function update(Request $request){
         try{
             $data = $request->all();
-            // dd($data);
+            $fname = $request->image->store('/public');
+            $data['image'] =$fname;
             $result= Book::update($data);
 
             if(!empty($result)){
