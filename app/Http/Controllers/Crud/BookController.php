@@ -32,6 +32,35 @@ class BookController extends Controller
 
         }
     }
+    public function edit($id){
+        try{
+            $data = Book::getById($id);
+            // dd($data);
+            if($data){
+                return view('bookEdit',['bookData'=>$data]);
+            }
+            else{
+                return redirect('bookShow')->withErrors('Data Not Found'); 
+            }
+        }catch(\Exception $e){
+
+        }
+    }
+    public function update(Request $request){
+        try{
+            $data = $request->all();
+            // dd($data);
+            $result= Book::update($data);
+
+            if(!empty($result)){
+                return redirect('bookShow');
+            }else{
+                return redirect('bookShow')->withError('Unable to save');
+            }
+        }catch(\Exception $e){
+
+        }
+    }
     public function delete($id){
         try{
             $data = Book::delete($id);
