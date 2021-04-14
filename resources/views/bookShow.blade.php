@@ -20,6 +20,7 @@
                     <td><img src='<?php echo "/storage/".str_replace('public/','',$value['image']); ?>' width="80" /></td>
                     <td>{{ $value['name'] }}</td>
                     <td>{{ $value['price'] }}</td>
+                    <td><a href="book/edit/{{ $value['id'] }}">Edit</a></td>
                     <td><a href="/book/delete/{{ $value['id'] }}">Delete</a></td>
                 </tr>
             @endforeach
@@ -27,3 +28,4 @@
     </table>
 </div>
 @endsection
+<td>
