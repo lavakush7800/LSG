@@ -1,0 +1,87 @@
+<?php 
+namespace App\Lib\Crud;
+
+
+use App\Lib\Crud\Book;
+use App\Models\Author as Model;
+use Illuminate\Support\Facades\Auth;
+
+class Author{
+    public static function store(array $data):string{
+        try{
+            
+            if(isset($data['id']) and !empty($data['id'])){
+                $model = Model::find($data['id']);
+
+            }
+            if(!$model){
+                $model = new Model();
+            }
+            $model->user_id = Auth::id();
+            $model->name = $data['name'];
+            $model->save();
+            if($result){
+                return $result;
+            }else{
+                return '';
+            }
+        }catch(\Exception $e){
+            throw new \Exception('Sumthing went Wrong');
+        }
+    } 
+
+    public static function getAll():array{
+        try{
+            $result = Model::all();
+            if($result->isNotEmpty()){
+                return $result->toArray();
+            }
+            return [];
+        }catch(Exception $e){
+            throw new Exception('Sumthing went Wrong');
+        }
+    }
+    public static function getById(int $id):object{
+        try{
+            $data = Model::find($id);
+            if($data){
+                return $data;
+            }else{
+                '';
+            }
+        }catch(\Exception $e){
+            throw new \Exception('Sumthing went Wrong');
+        }
+    }
+    public static function update(array $data):bool{
+        try{
+            $authordata = [
+                'name'=>$data['name'],
+                'user_id'=>Auth::id()
+            ];
+            $id= $data['id'];
+             
+            $result= Model::updateOrCreate(['id'=>$id],$authordata);
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(\Exception $e){
+            \Log::info($e);
+            throw new \Exception('Sumthing went Wrong');
+        }
+    }
+    public static function delete(int $id):bool{
+        try{
+            $data = Model::find($id)->delete();
+            if($data){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(\Exception $e){
+            throw new \Exception('Sumthing went Wrong');
+        }
+    }
+}

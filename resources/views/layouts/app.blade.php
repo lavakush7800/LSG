@@ -45,6 +45,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="bookShow">Book</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/author">Authors</a>
+                            </li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
