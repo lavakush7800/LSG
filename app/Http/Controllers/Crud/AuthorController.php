@@ -22,9 +22,10 @@ class AuthorController extends Controller
         }
     }
 
-    public function store(BookAuthor $request){
+    public function store(Request $request){
         try{
             $data = $request->all();
+            dd($data);
             $result = Author::store($data);
         }catch(\Exception $e){
             return redirect('author')->withErrors('Unable to save');
@@ -47,7 +48,7 @@ class AuthorController extends Controller
             return redirect('author')->withErrors('Data Not Found'); 
         }
     }
-    public function update(BookAuthor $request){
+    public function update(Request $request){
         try{ 
             $data = $request->all();
             $result= Author::update($data);
