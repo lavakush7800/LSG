@@ -1,15 +1,15 @@
 @extends('layouts.app')
-@section('title','Author')
+@section('title','category')
 @section('content')
 
 <div class="container">
-  <center><h2>Add Author</h2></center>
-  <form method="post" action="/author/update">
+  <center><h2>Add Category</h2></center>
+  <form method="post" action="/category/update">
 
     <div class="form-group">
-      <label for="name">Author Name:</label>
-      <input type="hidden" class="form-control" id="id" placeholder="Author id" name="id" value="{{ $editdata->id??'' }}">
-      <input type="text" class="form-control" id="name" placeholder="Author Name" name="name" value="{{ $editdata->name??'' }}">
+      <label for="name">Category Name:</label>
+      <input type="hidden" class="form-control" id="id" placeholder="Category id" name="id" value="{{ $editdata->id??'' }}">
+      <input type="text" class="form-control" id="name" placeholder="Category Name" name="name" value="{{ $editdata->name??'' }}">
       @error('name')
       <div class="alert alert-danger">{{ $message }}</div>
      @enderror
@@ -27,29 +27,29 @@
 
  
 <div class="container">
- <center> <h2>Author Table</h2></center>   
+ <center> <h2>Category Table</h2></center>   
   <table class="table">
     <thead>
       <tr>
         <th>ID</th>
-        <th>AUTHOR NAME</th>
+        <th>category NAME</th>
         <th>EDIT</th>
         <th>DELETE</th>
       </tr>
     </thead>
     <tbody>
-    @foreach($data as $author)
+    @foreach($data as $category)
     
       <tr>
-        <td>{{ $author['id'] }}</td>
-        <td>{{ $author['name'] }}</td>       
+        <td>{{ $category['id'] }}</td>
+        <td>{{ $category['name'] }}</td>       
         <td>
-        <a  href="author?edit={{ $author['id'] }}">
+        <a  href="category?edit={{ $category['id'] }}">
         <button class="btn btn-secondary">Edit</button>
         </a>
         </td>
         <td>
-        <form  action="author/delete/{{ $author['id'] }}">
+        <form  action="category/delete/{{ $category['id'] }}">
         @csrf
         <button class="btn btn-danger">Delete</button>
         </form>

@@ -3,7 +3,7 @@ namespace App\Lib\Crud;
 
 use App\Lib\Crud\BookDetail;
 use App\Http\Controllers\Crud\BookController;
-use App\Model\Book as Model;
+use App\Models\Book as Model;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 

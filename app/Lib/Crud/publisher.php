@@ -1,22 +1,19 @@
 <?php 
 namespace App\Lib\Crud;
 
-
-use App\Lib\Crud\Book;
-use App\Models\Author as Model;
+use App\Lib\Crud\Publisher;
+use App\Models\Publisher as Model;
 use Illuminate\Support\Facades\Auth;
 
-class Author{
+class Publisher{
     public static function store(array $data):string{
         try{
-            
             if(isset($data['id']) and !empty($data['id'])){
                 $model = Model::find($data['id']);
             }
             if(!$model){
                 $model = new Model();
             }
-            $model->user_id = Auth::id();
             $model->name = $data['name'];
             $model->save();
             if($result){
@@ -46,28 +43,27 @@ class Author{
             if($data){
                 return $data;
             }else{
-                '';
+                return '';
             }
         }catch(\Exception $e){
+           
             throw new \Exception('Sumthing went Wrong');
         }
     }
     public static function update(array $data):bool{
         try{
-            $authordata = [
+            $publisherdata = [
                 'name'=>$data['name'],
                 'user_id'=>Auth::id()
             ];
             $id= $data['id'];
-             
-            $result= Model::updateOrCreate(['id'=>$id],$authordata);
+            $result= Model::updateOrCreate(['id'=>$id],$publisherdata);
             if($result){
                 return true;
             }else{
                 return false;
             }
         }catch(\Exception $e){
-            \Log::info($e);
             throw new \Exception('Sumthing went Wrong');
         }
     }
