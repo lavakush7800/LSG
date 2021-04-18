@@ -15,7 +15,9 @@ class CreatePublishersTable extends Migration
     {
         Schema::create('publishers', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('name');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
