@@ -10,7 +10,7 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>BOOK NAME</th>
+        <th>BOOK</th>
         <th>IMAGES</th>
         <th>PRICE</th>
         <th>BOOK_ID</th>
@@ -21,8 +21,7 @@
         <th>AUTHOR</th>
         <th>PUBLISHER</th>
         <TH>CATEGORY</TH>
-        <th>UPDATE
-        </th>
+        <th>UPDATE</th>
         <th>DELETE</th>
       </tr>
     </thead>
@@ -46,13 +45,13 @@
         
         <input type="hidden"  name="id" value="{{ $data->bookDetail['id'] }}">
         @csrf
-        <button>Edit</button>
+        <button class="btn btn-primary">Edit</button>
         </form>
         </td>
    
         <td>
         <a href="book/delete/{{ $data->id }}">
-        <button>Delete</button>
+        <button class="btn btn-danger">Delete</button>
         </a>
         </td>
       </tr>

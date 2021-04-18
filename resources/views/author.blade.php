@@ -26,8 +26,11 @@
   </form>
 
  
-<div class="container">
- <center> <h2>Author Table</h2></center>   
+
+  <div class="card text-white bg-primary">
+  <div class="card-header"> <center> <h2>Author Table</h2></center></div>
+  <div class="card-body">
+  <div class="container"> 
   <table class="table">
     <thead>
       <tr>
@@ -59,5 +62,6 @@
     </tbody>
   </table>
 </div>
+  </div>
 @endsection
  

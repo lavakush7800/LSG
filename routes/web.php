@@ -54,3 +54,13 @@ Route::post('/category/update','Crud\CategoryController@store')->middleware('che
 Route::get('/category/edit/{id}','Crud\CategoryController@edit')->middleware('checklogin');
 Route::post('/category/update','Crud\CategoryController@update')->middleware('checklogin');
 Route::get('/category/delete/{id}','Crud\CategoryController@delete')->middleware('checklogin');
+
+
+
+Route::get('/user','Crud\FrontEndController@index');
+Route::get('/book/{id}','Crud\FrontEndController@getBookId');
+
+Route::post('/cart/book','Crud\CartController@add');
+Route::get('/cart','Crud\CartController@addByCart');
+Route::get('/remove/book/{id}','Crud\CartController@removeCart');
+Route::post('/cart/update','Crud\CartController@update');
