@@ -13,7 +13,6 @@
         <th>BOOK</th>
         <th>IMAGES</th>
         <th>PRICE</th>
-        <th>BOOK_ID</th>
         <th>YEAR</th>
         <th>PAGES</th>
         <th>QUANTITY</th>
@@ -32,7 +31,6 @@
         <td>{{ $data->title }}</td>
         <td><img src='<?php echo "/storage/".str_replace('public/','',$data->image); ?>' width="80" /></td>
         <td>{{ $data->price }}</td>
-        <td>{{ $data->bookDetail['id'] }}</td>
         <td>{{ $data->bookDetail['year'] }}</td>
         <td>{{ $data->bookDetail['pages'] }}</td>
         <td>{{ $data->bookDetail['qty'] }}</td>

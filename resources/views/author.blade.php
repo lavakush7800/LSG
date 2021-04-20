@@ -27,7 +27,7 @@
 
  
 
-  <div class="card text-white bg-primary">
+  <div class="card">
   <div class="card-header"> <center> <h2>Author Table</h2></center></div>
   <div class="card-body">
   <div class="container"> 
