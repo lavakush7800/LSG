@@ -4,23 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCartsTable extends Migration
+class CreateBookDetailsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
+        Schema::create('book_details', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('book_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->year('year');
+            $table->string('pages');
             $table->integer('qty');
-            $table->foreign('book_id')->references('id')->on('books');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
+            $table->string('description');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carts');
+        Schema::dropIfExists('book_details');
     }
 }

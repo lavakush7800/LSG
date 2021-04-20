@@ -2,10 +2,10 @@
 namespace App\Lib\Crud;
 
 use App\Http\Controllers\Crud\CartController;
-use App\Models\Cart;
+use App\Model\Cart;
 use Illuminate\Support\Facades\Log;
 use Auth;
-use App\Models\Book;
+use App\Model\Book;
 
 class CartStorage{
     public static function add(array $data):bool{

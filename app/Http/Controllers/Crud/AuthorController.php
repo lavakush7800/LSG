@@ -1,11 +1,11 @@
 <?php
+
 namespace App\Http\Controllers\Crud;
 
 use App\Lib\Crud\Author;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\BookAuthor;
-// use App\Models\Author;
 
 class AuthorController extends Controller
 {
@@ -26,7 +26,6 @@ class AuthorController extends Controller
     public function store(Request $request){
         try{
             $data = $request->all();
-            dd($data);
             $result = Author::store($data);
         }catch(\Exception $e){
             return redirect('author')->withErrors('Unable to save');

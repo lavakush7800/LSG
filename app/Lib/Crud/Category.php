@@ -2,7 +2,7 @@
 namespace App\Lib\Crud;
 
 use App\Lib\Crud\Book;
-use App\Models\Category as Model;
+use App\Model\Category as Model;
 use Illuminate\Support\Facades\Auth;
 
 class Category{

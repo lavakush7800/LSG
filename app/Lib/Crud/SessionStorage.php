@@ -4,7 +4,7 @@ namespace App\Lib\Crud;
 use App\Http\Controllers\Crud\CartController;
 use Illuminate\Support\Facades\Log;
 use App\Lib\Crud\Cart;
-use App\Models\Book;
+use App\Model\Book;
 
 class SessionStorage{
     public static function addSession($data){

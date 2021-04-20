@@ -51,7 +51,7 @@ class PublisherController extends Controller
             return redirect('publisher')->withErrors('Data Not Found'); 
         }
     }
-       public function update(Request $request){
+       public function update(BookPublisher $request){
         try{ 
             $data = $request->all();
           

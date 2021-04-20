@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,4 +19,5 @@ class Cart extends Model
     public function bookDetails(){
         return $this->hasMany('App\Model\BookDetail');
     }
+
 }

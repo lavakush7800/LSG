@@ -4,8 +4,8 @@ namespace App\Lib\Crud;
 use App\Http\Controllers\Crud\CartController;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Book;
-use App\Models\Cart as Model;
+use App\Model\Book;
+use App\Model\Cart as Model;
 use App\Lib\Crud\CartStorage;
 use App\Lib\Crud\SessionStorage;
 

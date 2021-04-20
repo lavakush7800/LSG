@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,9 +10,9 @@ class BookDetail extends Model
     public $timestamps = false;
 
     public function book(){
-        return $this->belongsTo('App\Models\Book');
+        return $this->belongsTo('App\Model\Book');
     }
     public function cart(){
-        return $this->belongsTo('App\Models\Cart');
+        return $this->belongsTo('App\Model\Cart');
     }
 }

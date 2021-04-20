@@ -2,7 +2,7 @@
 namespace App\Lib\Crud;
 
 use App\Lib\Crud\Publisher;
-use App\Models\Publisher as Model;
+use App\Model\Publisher as Model;
 use Illuminate\Support\Facades\Auth;
 
 class Publisher{

@@ -3,7 +3,7 @@ namespace App\Lib\Crud;
 
 
 use App\Lib\Crud\Book;
-use App\Models\Author as Model;
+use App\Model\Author as Model;
 use Illuminate\Support\Facades\Auth;
 
 class Author{
@@ -12,6 +12,7 @@ class Author{
             
             if(isset($data['id']) and !empty($data['id'])){
                 $model = Model::find($data['id']);
+
             }
             if(!$model){
                 $model = new Model();

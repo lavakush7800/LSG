@@ -2,7 +2,7 @@
 namespace App\Lib\Crud;
 
 use App\Lib\Crud\Book;
-use App\Models\BookDetail as Model;
+use App\Model\BookDetail as Model;
 use Illuminate\Support\Facades\Log;
 
 class BookDetail{
