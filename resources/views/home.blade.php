@@ -10,13 +10,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{{URL::asset('/image/propic.png')}}" alt="profile Pic" height="200" width="200">
+      <img class="d-block w-100" src="{{URL::asset('/image/l1.jpg')}}" alt="profile Pic" height="200" width="200">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+    <img class="d-block w-100" src="{{URL::asset('/image/l1.jpg')}}" alt="profile Pic" height="200" width="200">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+    <img class="d-block w-100" src="{{URL::asset('/image/l1.jpg')}}" alt="profile Pic" height="200" width="200">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
