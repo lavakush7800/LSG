@@ -5,7 +5,8 @@
   // dd($data);
 ?>
 <div class="container">
- <center> <h2>BookStore Data</h2></center>   
+<center><h4>Book Data</h4></center>
+ <a href="/book"><button class="btn btn-primary btn-sm">Add Book</button></a>
   <table class="table">
     <thead>
       <tr>

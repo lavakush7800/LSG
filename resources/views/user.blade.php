@@ -4,11 +4,8 @@
 <div class="container-fluid">
   <div class="row">
    @foreach($values as $data)
-   <?php
-    // dd($data);
-    ?>
    <div class="col-md-3 portfolio-item">
-     <div class="card" style="margin-top:25px; ">
+     <div class="card bg-primary bg-image hover-overlay hover-zoom hover-shadow ripple" style="margin-top:25px;">
          <center><a href="book/{{ $data->id }}">
          <img class="img-responsive" src='<?php echo "/storage/".str_replace('public/','',$data->image); ?>' alt=""; width="345px"; height="450px">
          </a></center>
