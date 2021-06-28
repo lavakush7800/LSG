@@ -8,19 +8,8 @@ use Illuminate\Support\Facades\Auth;
 class Contact{
     public static function store(array $data):string{
         try{
-            if(isset($data['id']) and !empty($data['id'])){
-                $model = Model::find($data['id']);
-            }
-            if(!$model){
-                $model = new Model();
-            }
-            $model->name = $data['name'];
-            $model->save();
-            if($result){
-                return $result;
-            }else{
-                return '';
-            }
+            $data = Model::create();
+            return $data;
         }catch(\Exception $e){
             throw new \Exception('Sumthing went Wrong');
         }
