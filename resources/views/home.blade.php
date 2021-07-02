@@ -6,7 +6,7 @@
     <div class="col-12 col-md-8">
     <div class="card-body"><h4>Contact Us</h4></div>
           <div class="container-fluid">
-                <form class="col px-md-10" action="/action_page.php" style="margin-bottom: 25px;">
+                <form class="col px-md-10" method="post" action="/contact/save" style="margin-bottom: 25px;">
                   <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name">
@@ -23,6 +23,7 @@
                     <label for="exampleFormControlTextarea4">Descriptions</label>
                     <textarea class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
                   </div>
+                  @csrf
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
           </div>
