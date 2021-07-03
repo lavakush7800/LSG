@@ -24,9 +24,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
                   </div>
                   @csrf
-                  <div class="col-6"><button type="submit" class="btn btn-primary">Submit</button></div>
-                  <div class="col-6"><button type="submit" class="btn btn-primary">Login</button></div>
-               
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
           </div>
     </div>
